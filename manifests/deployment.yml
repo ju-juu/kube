@@ -1,0 +1,10 @@
+kind: pod
+apIversion: v1
+metadata:
+  name: foo-app
+  labels:
+    app: foo
+spec:
+    containers:
+        - name: foo-app
+          image: python:3.7-alpine

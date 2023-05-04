@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: foo-app
-      image: 'kicbase/echo-server:1.0'
+      image: python:3.7-alpine
 ---
 kind: Service
 apiVersion: v1
@@ -15,7 +15,7 @@ metadata:
   name: foo-service
 spec:
   selector:
-    app: foo;
+    app: foo
   ports:
     - port: 8080
 ---
