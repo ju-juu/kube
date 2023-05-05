@@ -1,10 +1,21 @@
-kind: pod
-apIversion: v1
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: foo-app
-  labels:
-    app: foo
+  name: api
 spec:
-    containers:
-        - name: foo-app
-          image: python:3.7-alpine
+  replicas: 3
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: my-app-container
+        image: jujuzz/anotherapi:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
