@@ -22,3 +22,11 @@
 
 
     kubectl apply -f manifests/deployment.yml
+
+* Create a MiniKube service that will act as an ingress (due to the lack of a real ingress controller)
+
+
+    minkube service api --url
+
+
+`You should now be able to access the API at the returned URL.`
