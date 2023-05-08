@@ -1,6 +1,12 @@
-# Run Locally
+# Why?
 
-## Create Dev Environment
+This is a simple demo of how to set up a Kubernetes cluster with a single service. The kluster contains a single pod
+that needs to be pre-compiled and pushed to a docker registry. The pod is then deployed to the cluster and exposed as
+a service.
+
+# How?
+
+## Create MiniKube cluster
 
 * Clone the project
 * Install minikube and kubectl
@@ -9,7 +15,7 @@
 
 ## Configure Kubernetes
 
-* Create secret
+* Create secret for docker registry
 
 
     kubectl create secret docker-registry regcred \
@@ -29,4 +35,3 @@
     minkube service api --url
 
 
-`You should now be able to access the API at the returned URL.`
